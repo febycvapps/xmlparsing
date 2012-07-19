@@ -116,8 +116,10 @@ UILabel *contentLabel;
 {
     [super viewDidLoad];
     
+    //xmlParser = [[parseobject alloc] loadXMLByURL:@"https://maps.googleapis.com/maps/api/place/search/xml?location=8.487464551632215,76.95282608270645&radius=10000&types=atm&sensor=false&key=AIzaSyBfTm8JWtX_lKBH_0A4SBwU1afJwLOpfPM"];
     
     xmlParser = [[parseobject alloc] loadXMLByURL:@"http://api.twitter.com/1/statuses/user_timeline/KentFranks.xml"];
+    
     twitterLogo = [UIImage imageNamed:@"twitter.png"];
     
     self.title = @"My Tweets";

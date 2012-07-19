@@ -19,6 +19,7 @@
 		871A727115B4FB4D000A025C /* parseobject.m in Sources */ = {isa = PBXBuildFile; fileRef = 871A727015B4FB4D000A025C /* parseobject.m */; };
 		871A727515B5006E000A025C /* twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = 871A727415B5006E000A025C /* twitter.png */; };
 		871A727F15B50220000A025C /* twitter-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 871A727E15B50220000A025C /* twitter-icon.png */; };
+		879D0CBA15B7C8E500C14457 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 879D0CB915B7C8E500C14457 /* Default.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		871A727015B4FB4D000A025C /* parseobject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = parseobject.m; sourceTree = "<group>"; };
 		871A727415B5006E000A025C /* twitter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = twitter.png; path = ../../../Icons/twitter.png; sourceTree = "<group>"; };
 		871A727E15B50220000A025C /* twitter-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "twitter-icon.png"; path = "../twitter-icon.png"; sourceTree = "<group>"; };
+		879D0CB915B7C8E500C14457 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = ../Default.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				871A725315B4F721000A025C /* xmlparsing-Info.plist */,
 				871A725415B4F721000A025C /* InfoPlist.strings */,
 				871A727415B5006E000A025C /* twitter.png */,
+				879D0CB915B7C8E500C14457 /* Default.png */,
 				871A727E15B50220000A025C /* twitter-icon.png */,
 				871A726C15B4FB36000A025C /* tweetobject.h */,
 				871A726D15B4FB36000A025C /* tweetobject.m */,
@@ -169,6 +172,7 @@
 				871A726215B4F721000A025C /* ViewController.xib in Resources */,
 				871A727515B5006E000A025C /* twitter.png in Resources */,
 				871A727F15B50220000A025C /* twitter-icon.png in Resources */,
+				879D0CBA15B7C8E500C14457 /* Default.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,6 +297,7 @@
 				871A726715B4F722000A025C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

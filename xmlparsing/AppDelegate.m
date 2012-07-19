@@ -28,6 +28,7 @@
     // Override point for customization after application launch.
     self.viewController = [[[ViewController alloc] initWithNibName:@"ViewController" bundle:nil] autorelease];
     self.navigation = [[UINavigationController alloc]initWithRootViewController:self.viewController];
+    self.navigation.navigationBar.barStyle = UIBarStyleBlack;
     self.window.rootViewController = self.navigation;
     [self.window makeKeyAndVisible];
     return YES;
