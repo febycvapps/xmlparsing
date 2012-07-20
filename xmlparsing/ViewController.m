@@ -7,8 +7,7 @@
 //
 
 #import "ViewController.h"
-#import "tweetobject.h"
-#import "parseobject.h"
+
 
 @interface ViewController ()
 
@@ -25,12 +24,26 @@ UILabel *dateLabel;
 CGRect contentFrame;
 UILabel *contentLabel;
 
-
-/*- (void)viewDidLoad
+//Reachable Conditions
+-(NSString *)stringFromStatus:(NetworkStatus)status
 {
-    [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
-}*/
+    NSString *string;
+    switch (status)
+    {
+        case NotReachable: string = @"No Network Found";
+            break;
+            
+        case ReachableViaWiFi: string = @"Reachable via WiFi";
+            break;
+            
+        case ReachableViaWWAN: string = @"Reachable via WWAN";
+            break;
+            
+        default: string = @"Unknown";
+            break;
+    }
+    return string;
+}
 
 - (void)didReceiveMemoryWarning
 {
@@ -116,14 +129,24 @@ UILabel *contentLabel;
 {
     [super viewDidLoad];
     
-    //xmlParser = [[parseobject alloc] loadXMLByURL:@"https://maps.googleapis.com/maps/api/place/search/xml?location=8.487464551632215,76.95282608270645&radius=10000&types=atm&sensor=false&key=AIzaSyBfTm8JWtX_lKBH_0A4SBwU1afJwLOpfPM"];
+    Reachability *reach = [Reachability reachabilityForInternetConnection];
+    NetworkStatus status = [reach currentReachabilityStatus];
+    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Error !!!!" message:[self stringFromStatus:status] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
     
-    xmlParser = [[parseobject alloc] loadXMLByURL:@"http://api.twitter.com/1/statuses/user_timeline/KentFranks.xml"];
-    
-    twitterLogo = [UIImage imageNamed:@"twitter.png"];
+    switch (status)
+        {
+            case NotReachable: [alert show];
+                break;
+                
+            default:
+                xmlParser = [[parseobject alloc] loadXMLByURL:@"http://api.twitter.com/1/statuses/user_timeline/KentFranks.xml"];
+                twitterLogo = [UIImage imageNamed:@"twitter.png"];
+                break;
+        }
     
     self.title = @"My Tweets";
 }
+
 
 
 - (void)viewDidUnload
